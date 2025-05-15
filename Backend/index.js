@@ -6,27 +6,19 @@ const cors = require("cors");
 const app = express();
 
 // Проверка MONGODB_URI
-console.log("MONGODB_URI:", process.env.MONGODB_URI);
 if (!process.env.MONGODB_URI) {
   console.error("Ошибка: MONGODB_URI не определена в .env");
   process.exit(1);
 }
 
-// routes
-const AuthRoutes = require("./Routes/AuthRoutes");
-const InventoryRoutes = require("./Routes/InventoryRoutes");
-const PostRoutes = require("./Routes/PostRoutes");
-const followRoutes = require("./Routes/followersRoutes");
-
 // middleware
 app.use(express.json());
 app.use(cors({}));
 
-// Routes middleware
-app.use("/Auth", AuthRoutes);
-app.use("/inventory", InventoryRoutes);
-app.use("/post", PostRoutes);
-app.use("/follow", followRoutes);
+// Простой маршрут для проверки
+app.get("/", (req, res) => {
+  res.send("Сервер работает");
+});
 
 // mongodb connection
 mongoose
@@ -34,7 +26,8 @@ mongoose
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
-      console.log("connected to db & listening on port", process.env.PORT);
+      console.log("Connected to DB & listening on port", process.env.PORT);
+      console.log(`Server running at http://localhost:${process.env.PORT}`);
     });
   })
   .catch((error) => {
