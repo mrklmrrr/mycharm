@@ -2,6 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const authRouter = require("./Routes/AuthRoutes")
+const followersRouter = require("./Routes/followersRoutes")
+const inventoryRouter = require("./Routes/InventoryRoutes")
+const postRoutes = require("./Routes/PostRoutes")
 
 const app = express();
 
@@ -14,6 +18,11 @@ if (!process.env.MONGODB_URI) {
 // middleware
 app.use(express.json());
 app.use(cors({}));
+
+app.use(authRouter)
+app.use(followersRouter)
+app.use(inventoryRouter)
+app.use(postRoutes)
 
 // Простой маршрут для проверки
 app.get("/", (req, res) => {
