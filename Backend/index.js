@@ -19,10 +19,10 @@ if (!process.env.MONGODB_URI) {
 app.use(express.json());
 app.use(cors({}));
 
-app.use("auth", authRouter)
-app.use("follow", followersRouter)
-app.use("inventory", inventoryRouter)
-app.use("post", postRoutes)
+app.use("/auth", authRouter)
+app.use("/follow", followersRouter)
+app.use("/inventory", inventoryRouter)
+app.use("/post", postRoutes)
 
 // Простой маршрут для проверки
 app.get("/", (req, res) => {
