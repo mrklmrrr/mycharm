@@ -41,7 +41,6 @@ const WelcomeText = () => {
           some bugs maybe ill fix them in the future⚠️
         </p>
         if you have any suggestions or feedback please contact me on
-        <p>ibrahimbnhs@gmail.com</p>
         <p>now visit your closet and start build your outfit</p>
       </div>
     </div>
