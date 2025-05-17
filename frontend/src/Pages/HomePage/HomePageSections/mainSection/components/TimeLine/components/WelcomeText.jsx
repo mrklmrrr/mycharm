@@ -36,7 +36,13 @@ const WelcomeText = () => {
           tailwindCSS , nodeJs , express , MongoDb {"==>"}
           MERN
         </p>
-
+        <p className="font-bold">
+          ⚠️ this website is a personal project in beta release so you my find
+          some bugs maybe ill fix them in the future⚠️
+        </p>
+        if you have any suggestions or feedback please contact me on
+        <p>ibrahimbnhs@gmail.com</p>
+        <p>now visit your closet and start build your outfit</p>
       </div>
     </div>
   );
