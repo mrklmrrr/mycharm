@@ -14,7 +14,7 @@
     "uuidv4": "^6.2.13"
   },
   "engines": {
-    "node": "14.17.6"
+    "node": "22.15.0"
   },
   "name": "backend",
   "version": "1.0.0",
